@@ -22,6 +22,15 @@ Files:
 
 If **Anyone** is missing from the access dropdown, your Google Workspace admin only allows sharing inside the organization. Ask them to allow external access for this script.
 
+## The link to share: GitHub Pages
+
+Share **https://skylaryoung.github.io/offsite-breakout-signup/** (QR code: `breakout-signup-qr.png`), not the `/exec` link.
+
+The Apps Script `/exec` page fails with "Sorry, unable to open the file at this time" for anyone whose browser is signed in to more than one Google account. The GitHub Pages copy of `index.html` avoids that: it saves and loads signups through the script's `doPost` API without sending any Google sign-in.
+
+- `API_URL` near the top of the script in `index.html` must be the `/exec` URL of the **current** deployment. If you create a new deployment instead of a new version of the existing one, the URL changes and `API_URL` needs updating.
+- To publish a change to the page, commit and push `index.html` to this repo. Pages updates within a minute or two.
+
 ## Day-to-day
 
 Edit everything in the sheet. Changes show up on the page at the next refresh, with no redeploy needed.
